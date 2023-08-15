@@ -90,17 +90,17 @@ public class TestUtils {
         return text.substring(0, index);
     }
     public static String getCookie (WebDriver driver){
-        driver.get("https://accounts.dev.swisscows.com/profile");
+        driver.get("https://accounts.swisscows.com/profile");
         return given()
                 .contentType(ContentType.JSON)
-                .body("{\"email\":\"a.qa@swisscows.email\",\"password\":\"2075Deltuha\",\"returnUrl\":\"/login\"}")
-                .post("https://accounts.dev.swisscows.com/api/account/login")
+                .body("{\"email\":\"aqa@swisscows.email\",\"password\":\"2075Deltuha\",\"returnUrl\":\"/login\"}")
+                .post("https://accounts.swisscows.com/api/account/login")
                 .then().log().all().extract().cookie(".AspNetCore.Identity.Application");
     }
     public static void addCookie(WebDriver driver, String cookieValue){
         Date expDate = new Date();
         expDate.setTime(expDate.getTime() + (10000 * 10000));
-        Cookie cookie = new Cookie(".AspNetCore.Identity.Application", cookieValue, "accounts.dev.swisscows.com", "/", expDate);
+        Cookie cookie = new Cookie(".AspNetCore.Identity.Application", cookieValue, "accounts.swisscows.com", "/", expDate);
         driver.manage().addCookie(cookie);
     }
 

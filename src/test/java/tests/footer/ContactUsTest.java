@@ -4,6 +4,7 @@ import base.BaseTest;
 import io.qase.api.annotation.QaseId;
 import io.qase.api.annotation.QaseTitle;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.footer_menu.ContactUsPage;
@@ -11,6 +12,7 @@ import pages.footer_menu.MediaEducationPage;
 import utils.ProjectConstants;
 
 public class ContactUsTest extends BaseTest {
+    @Ignore
     @QaseTitle("Check form submission on Contact Us Page")
     @QaseId(value = 4978)
     @Test

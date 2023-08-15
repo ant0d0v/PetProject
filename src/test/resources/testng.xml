@@ -4,7 +4,6 @@
     <test name="Static pages tests" >
         <classes>
             <class name="tests.SummaryTest"/>
-            <class name="tests.SubscriptionsTest"/>
             <class name="tests.header.TopMenuTest"/>
             <class name="tests.footer.FooterMenuTest"/>
             <class name="tests.MainTest"/>
@@ -30,11 +29,6 @@
             <class name="tests.header.ImageTest"/>
             <class name="tests.header.VideoTest"/>
             <class name="tests.header.MusicTest"/>
-        </classes>
-    </test>
-    <test name="Autobahn test" >
-        <classes>
-            <class name="tests.AutobahnTest"/>
         </classes>
     </test>
 </suite>

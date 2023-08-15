@@ -41,8 +41,8 @@ public class MainPage extends FooterMenuPage<MainPage> {
 
     @FindBy(xpath = "(//img[@src= 'https://api.dev.swisscows.com/b4r/be94588d61a04cd6849392dd3884464d'])[position() = 2]")
     private WebElement homepageBannerImageOfEmail;
-    @FindBy(xpath = "(//img[@src= 'https://api.dev.swisscows.com/b4r/991b8059be404bb2ac04c6ad90662351'])[position() = 2]")
-    private WebElement homepageBannerImageOfMusic;
+    @FindBy(xpath = "(//img[@src= 'https://api.swisscows.com/b4r/96abd445b5ac4cd29717ffe0c53d69fd'])[position() = 1]")
+    private WebElement homepageBannerImageOfEdelcoin;
 
     @FindBy(xpath = "//div[@class= 'faq-wrap']//div[1]")
     private WebElement homepageFirstQuestion;
@@ -173,11 +173,9 @@ public class MainPage extends FooterMenuPage<MainPage> {
         return this;
     }
 
-    public MusicPage clickHomeBanner() {
-        Actions action = new Actions(getDriver());
-        action.doubleClick(homepageBanner).build().perform();
+    public void clickHomeBanner() {
+        click20(homepageBanner);
         switchToAnotherWindow();
-        return new MusicPage(getDriver());
     }
     @Step("Click on a first question .")
     public MainPage clickFirstQuestion() {
@@ -302,8 +300,8 @@ public class MainPage extends FooterMenuPage<MainPage> {
       return new MainPage(getDriver());
     }
     @Step("Wait to be visible image Music in the banner")
-    public MainPage waitForImageInBannerVisibleOfMusic() {
-        wait20ElementToBeVisible(homepageBannerImageOfMusic);
+    public MainPage waitForImageInBannerVisibleOfEdelcoin() {
+        wait20ElementToBeVisible(homepageBannerImageOfEdelcoin);
         return new MainPage(getDriver());
     }
     @Step("Wait for the footer panel to be visible.")
@@ -360,7 +358,7 @@ public class MainPage extends FooterMenuPage<MainPage> {
     }
     @Step("music image is dysplaed in the banner  ")
     public boolean imageOfMusicInBannerIsDysplaed(){
-        return isElementDisplayed(homepageBannerImageOfMusic);
+        return isElementDisplayed(homepageBannerImageOfEdelcoin);
     }
     @Step("email image is dysplaed in the banner  ")
     public boolean imageOfEmailInBannerIsDysplaed(){

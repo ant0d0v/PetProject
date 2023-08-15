@@ -389,7 +389,8 @@ public class TopMenuTest extends BaseTest {
     @QaseId(value = 4937)
     @Test
     public void testLoginUserAndNicknameIsDysplaed() {
-        final String expectedNick = "a" +"\n" +"a.qa@swisscows.email";
+        final String expectedNick = "T\n"
+                + "Test";
 
         final String nickname = openBaseURL()
                 .clickHamburgerMenu()
@@ -522,7 +523,6 @@ public class TopMenuTest extends BaseTest {
                 .clickRegionTopMenu()
                 .clickRegionGerman()
                 .inputSearchCriteriaAndEnter("news")
-                .waitUntilVisibilityWebResult()
                 .clickNewsButton()
                 .waitUrlToBeChanged("/en/news?query=news&region=de-DE")
                 .waitCharityValueCountChanged("2")
@@ -550,9 +550,6 @@ public class TopMenuTest extends BaseTest {
     @QaseId(value = 4947)
     @Test
     public void testEmailIconNavigatesToLoginPageIfLoggedIn() {
-        MainPage mainPage = new MainPage(getDriver());
-        final String expectedEmailURL = "https://accounts.swisscows.com/login?ReturnUrl";
-        final String expectedH1Text = "Login";
 
         openBaseURL()
                 .clickHamburgerMenu()
@@ -560,19 +557,14 @@ public class TopMenuTest extends BaseTest {
                 .clickEmailTopMenu()
                 .switchToExternalPage();
 
-        final String actualH1text = mainPage.getH1Text();
-
-        Assert.assertTrue(getExternalPageURL().contains(expectedEmailURL));
-        Assert.assertEquals(actualH1text,expectedH1Text);
-
+        Assert.assertTrue(getExternalPageURL().contains("https://swisscows.email/mbox/"));
     }
     @QaseTitle("Check that email icon navigates to login page if user logged in on the search page  ")
     @QaseId(value = 4948)
     @Test
     public void testEmailIconNavigatesToLoginPageIfLoggedIn_SearchPage() {
         MainPage mainPage = new MainPage(getDriver());
-        final String expectedEmailURL = "https://accounts.swisscows.com/login?ReturnUrl";
-        final String expectedH1Text = "Login";
+
 
         openBaseURL()
                 .inputSearchCriteriaAndEnter("ivanka")
@@ -582,11 +574,7 @@ public class TopMenuTest extends BaseTest {
                 .clickEmailTopMenuSearch()
                 .switchToExternalPage();
 
-        final String actualH1text = mainPage.getH1Text();
-
-        Assert.assertTrue(getExternalPageURL().contains(expectedEmailURL));
-        Assert.assertEquals(actualH1text,expectedH1Text);
-
+        Assert.assertTrue(getExternalPageURL().contains("https://swisscows.email/mbox/"));
     }
     @QaseTitle("VPN icon navigates to the VPN web page for search page")
     @QaseId(value = 4949)

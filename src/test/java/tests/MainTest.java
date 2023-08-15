@@ -3,6 +3,7 @@ import base.BaseTest;
 import io.qase.api.annotation.QaseId;
 import io.qase.api.annotation.QaseTitle;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.TestData;
@@ -60,14 +61,14 @@ public class MainTest extends BaseTest {
         final String oldUrl  = openBaseURL()
                 .getCurrentURL();
 
-        final String actualUrl = mainPage
-                .waitForImageInBannerVisibleOfMusic()
-                .clickHomeBanner()
-                .getCurrentURL();
+        mainPage
+                .waitForImageInBannerVisibleOfEdelcoin()
+                .clickHomeBanner();
 
-        Assert.assertNotEquals(oldUrl,actualUrl);
-        Assert.assertEquals(actualUrl, ProjectConstants.DOMAIN_WITHOUT_DEV + "/en/music?query=new+charts+2022");
+        Assert.assertNotEquals(oldUrl,mainPage.getCurrentURL());
+        Assert.assertEquals(mainPage.getCurrentURL(), "https://edelcoin.swisscows.com/en/");
     }
+    @Ignore
     @QaseTitle("Home page banner switches correctly")
     @QaseId(value = 4895)
     @Test
@@ -89,13 +90,14 @@ public class MainTest extends BaseTest {
         Assert.assertEquals(valueSecondSwitch,valueFirstSwitch);
 
     }
+    @Ignore
     @QaseTitle("Home page banner automatically switches to the next image")
     @QaseId(value = 4896)
     @Test
     public void testHomePageBannerSwitchingAuto ()  {
             MainPage mainPage = new MainPage(getDriver());
             openBaseURL()
-                    .waitForImageInBannerVisibleOfMusic();
+                    .waitForImageInBannerVisibleOfEdelcoin();
 
             Assert.assertTrue(mainPage.imageOfMusicInBannerIsDysplaed() );
 

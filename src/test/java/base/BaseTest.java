@@ -26,7 +26,7 @@ import static io.restassured.RestAssured.given;
 
 public abstract class BaseTest {
 
-    private final static String BASE_URL = "https://dev.swisscows.com/en";
+    private final static String BASE_URL = "https://swisscows.com/en";
 
     private WebDriver driver;
     private WebDriverWait webDriverWait;
