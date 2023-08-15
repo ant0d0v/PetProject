@@ -57,7 +57,6 @@ public class MainTest extends BaseTest {
     @Test
     public void testHomePageBannerClickableAndRedirectToCorrespondingPage() {
         MainPage mainPage = new MainPage(getDriver());
-
         final String oldUrl  = openBaseURL()
                 .getCurrentURL();
 
