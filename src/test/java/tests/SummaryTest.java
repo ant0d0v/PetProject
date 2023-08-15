@@ -21,5 +21,4 @@ public class SummaryTest extends BaseTest {
 
         Assert.assertTrue(actualTitle404Error.contains(expectedTextInSummaryPage));
     }
-
 }
