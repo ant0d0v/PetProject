@@ -103,7 +103,6 @@ public class TestUtils {
         Cookie cookie = new Cookie(".AspNetCore.Identity.Application", cookieValue, "accounts.swisscows.com", "/", expDate);
         driver.manage().addCookie(cookie);
     }
-
     public static List<String> getSortedList(List<String> elements) {
 
         return elements.stream().sorted().collect(Collectors.toList());

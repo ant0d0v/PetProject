@@ -1,4 +1,4 @@
-<h1>Java 11 | Selenium | TestNG | Maven | POM | Allure report | Integration with TMS Qase </h1>
+<h1>Java 11 | Selenium | TestNG | Maven | POM | Allure report | Integration with TMS Qase | Parallel Test</h1>
 <p>This is a sample Java 11 Adopt Open JDK | Selenium WebDriver | Maven | TestNG | project created in IntelliJ IDE, using Page Object Model and Generic Type.</p>
 <p>Website <a href="https://dev.swisscows.com">https://dev.swisscows.com/</a>&nbsp;was used to create functional, API, and UI tests.</p>
 
